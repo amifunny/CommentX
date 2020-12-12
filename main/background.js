@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(function(){
 	chrome.storage.sync.set({
 		"saved_comment":"",
 		"allow_notif":true,
-		"noitf_cache":"",
+		"notif_cache":"",
 		"username":""
 	});
 

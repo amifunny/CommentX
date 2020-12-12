@@ -24,7 +24,6 @@ def after_request(response):
 	response.headers['Cache-Control'] = 'no-cache,no-store,must-revalidate'
 	response.headers['Expires'] = 0
 	response.headers['Pragma'] = 'no-cache'
-	# response.headers['Access-Control-Allow-Credentials'] = 'True';
 
 	return response
 
@@ -131,7 +130,7 @@ def show_comment():
 
 	cursor = conn.cursor(dictionary=True)
 
-	sel = "SELECT * from comment_table WHERE c_url=%s LIMIT %s"
+	sel = "SELECT * from comment_table WHERE c_url=%s ORDER BY c_date DESC LIMIT %s"
 	val =( url , fetch_limit , )
 
 	cursor.execute(sel,val)
@@ -189,13 +188,9 @@ def add_vote():
 def get_notif():
 
 	json_receive = request.get_json()
-	print(json_receive)
-	# Require only `url`
 	username = json_receive['username']
 
-	response = {
-		'isNew':False
-	}
+	response = {}
 
 	# check if its within charlimit
 	if username is None or username=="":
@@ -218,6 +213,29 @@ def get_notif():
 
 	return response
 
+
+@app.route('/api/delete_notifs',methods=["POST"])
+def delete_notifs():
+
+	json_receive = request.get_json()
+	username = json_receive['username']
+
+	# check if its within charlimit
+	if username is None or username=="":
+		return response
+
+	cursor = conn.cursor(dictionary=True)
+	sel = 'DELETE FROM notif_table WHERE m_user=%s'
+	val = ( username , )
+
+	cursor.execute(sel,val)
+	conn.commit()
+
+	response = {
+		'success':True
+	}
+
+	return response
 
 
 

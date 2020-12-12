@@ -32,6 +32,55 @@ body{
   background: white;
 }
 
+/* USERNAME PAGE */
+
+.userfull{
+	height: calc( var(--content-h) + var(--panel-h) );
+	width : var(--body-w);
+	background: linear-gradient(to right, #ec008c, #fc6767);
+    color: white;
+}
+
+.userfull-welcome{
+	color: white;
+	text-align: center;	
+	margin-bottom: 5rem;
+}
+
+.userfull-welcome-head{
+	text-decoration: underline;
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.userfull-welcome-subtitle{
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+.username-prompt{
+	font-style: italic;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.username-input{
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    border: 0;
+}
+
+.username-submit{
+	padding: 1rem;
+	background: #1abc9c;
+	display: block;
+	cursor: pointer;
+	margin: 0.5rem auto;
+	border: 0;
+	color: white;
+}
+
 /* COMMENT TAB */
 
 .comment-outer{
@@ -88,6 +137,7 @@ body{
 	font-family: sans-serif;
 	font-size: 14px;
 	color: #5b5b5b;
+	margin: 1rem 0;
 }
 
 .vote-section{
@@ -145,6 +195,41 @@ body{
     overflow: hidden;
 }
 
+.clear-float{
+	clear: both;
+}
+
+.notif-setting-bar{
+	line-height: 24px;
+}
+
+.notif-delete-div{
+	float: left;
+}
+
+.notif-delete-btn{
+    padding: 0.2rem 0.5rem;
+    background: var(--panel-bg);
+    border: 2px solid white;
+    color: white;
+    font-weight: 600;
+}
+
+.notif-switch-div{
+	float: right;
+}
+
+.notif-switch-div>div{
+	display: inline-block;
+}
+
+.notif-switch-stat{
+	margin-right: 0.5rem;
+    font-weight: 700;
+    color: var(--panel-bg);
+}
+
+
 /* WRITE TAB */
 
 
@@ -195,14 +280,14 @@ body{
 	content:"";
 	height: var(--switch-h);
 	width: var(--switch-h);
-	background-color: dodgerblue;
+	background-color: var(--panel-bg);
 	transition: all ease-in-out 0.4s;
 	margin: 2px;
 
 }
 
 .cd-switch>input:checked+span{
-	background-color: dodgerblue; 
+	background-color: var(--panel-bg); 
 }
 
 .cd-switch>input:checked+span:before{
@@ -274,6 +359,9 @@ body{
 }
 
 .write-url-show{
+
+	color: grey;
+
 	margin: 5% 10%;
     padding: 10px;
     background: #f7f7f7;

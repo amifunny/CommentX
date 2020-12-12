@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Extra and old js files
+extra_js/
+
+# Flask session
+server/sess/
+
+# Python Compiled files
+server/__pycache__/
+
