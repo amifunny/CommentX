@@ -134,7 +134,7 @@ class CommentBlock extends React.Component{
 	getRelativeTime(){
 
 		let current_dt = new Date()
-		let comm_dt = new Date( this.props.datetime )
+		let comm_dt = new Date( this.props.datetime+"+05:30" )
 
 		// Get absolute difference between datime time attributes
 		let diff_tuple = [

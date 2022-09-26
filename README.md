@@ -3,9 +3,12 @@
 
 A Chrome extension to read and write comments on any web url. It is a complete discussion platform in form of extension. It allows mentions and notifications as well.
 
-<img src="readme_util/CX.PNG" width="400px" height="450px" />
-<img src="readme_util/CX1.PNG" width="400px" height="450px" />
-<img src="readme_util/CX2.PNG" width="400px" height="450px" />
+## Screenshots
+
+<img src="screenshot/welcome.png" width="550px" />
+<img src="screenshot/comment.png" width="550px" />
+<img src="screenshot/home.png" width="550px" />
+<img src="screenshot/notif.png" width="550px" />
 
 
 ## Files Structure -
